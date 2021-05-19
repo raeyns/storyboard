@@ -24,7 +24,7 @@ from __future__ import division
 from __future__ import print_function
 
 import argparse
-import fractions
+import math
 import hashlib
 import json
 import os
@@ -1038,7 +1038,7 @@ class Video(object):
         if s.dar is not None:
             s.dar_text = sdict['display_aspect_ratio']
         else:
-            gcd = fractions.gcd(s.width, s.height)
+            gcd = math.gcd(s.width, s.height)
             reduced_width = s.width // gcd
             reduced_height = s.height // gcd
             s.dar = reduced_width / reduced_height
